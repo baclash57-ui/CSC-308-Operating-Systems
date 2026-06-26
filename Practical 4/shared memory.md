@@ -43,7 +43,7 @@ int main() {
         // Step 3: Read data from shared memory
         printf("Child Process read: %s\n", data);
 
-        // Step 5: Detach shared memory in child
+        // Step 4: Detach shared memory in child
         shmdt(data);
 
         sem_close(sem);
@@ -62,7 +62,7 @@ int main() {
 
         wait(NULL); // Wait for child to finish
 
-        // Step 5: Detach and delete shared memory
+        // Step 4: Detach and delete shared memory
         shmdt(data);
         shmctl(shmid, IPC_RMID, NULL);
 
